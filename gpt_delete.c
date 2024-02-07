@@ -45,7 +45,7 @@ void char_press(BYTE virtualKeyCode){
 
 void select_first_chat(){
 	int i;
-	for(i = 0; i<8; i++){
+	for(i = 0; i<9; i++){
 		char_press(VK_TAB);
 	}
 	char_press(VK_RETURN);
@@ -53,7 +53,7 @@ void select_first_chat(){
 
 void select_burger(){
 	int i;
-	for(i = 0; i<9; i++){
+	for(i = 0; i<10; i++){
 		char_press(VK_TAB);
 	}
 	char_press(VK_RETURN);
@@ -77,7 +77,7 @@ int main() {
 	alt_tab();
 
 	int i = 0;
-	for(i = 0; i<4; i++){
+	for(i = 0; i<20; i++){
 		select_first_chat();
 
 		Sleep(1000);
