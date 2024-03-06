@@ -1,7 +1,8 @@
 // =======================================================================
-// Description     : Code that will impress u ;)
 // Author          : G.M. Yongco #BeSomeoneWhoCanStandByShinomiya
 // Date            : ur my date uwu
+// Description     : Uses tabs to navigate the website UI and other keyboard inputs to delte a chat
+// 		useless and stopped development cuz i realized theres a delete all chats option 
 // =======================================================================
 
 #include <Windows.h>
@@ -45,7 +46,7 @@ void char_press(BYTE virtualKeyCode){
 
 void select_first_chat(){
 	int i;
-	for(i = 0; i<9; i++){
+	for(i = 0; i<8; i++){
 		char_press(VK_TAB);
 	}
 	char_press(VK_RETURN);
@@ -85,7 +86,7 @@ int main() {
 		select_burger();
 		delete();
 
-		Sleep(1000);
+		Sleep(2000);
 	}
 	return 0;
 }

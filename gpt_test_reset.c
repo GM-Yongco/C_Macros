@@ -65,7 +65,6 @@ void string_press(const char *str) {
 	}
 }
 
-
 void custom_loop(){
 	// this function spells
 	// "https://chat.openai.com/"
@@ -86,7 +85,6 @@ void custom_loop(){
 	string_press("com");
 	char_press(VK_OEM_2);
 }
-
 
 // =======================================================================
 // MAIN
