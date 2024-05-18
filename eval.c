@@ -43,7 +43,8 @@ void part_1(int score){
 
 // =======================================================================
 
-void part_2(int score){						//learning expereince satisfaction thingy
+//learning expereince satisfaction thingy
+void part_2(int score){						
 	int i, PART_MAX = 10;
 	BOOLEAN randomize = FALSE;
 	if(score == RANDOM){
@@ -67,6 +68,7 @@ void part_2(int score){						//learning expereince satisfaction thingy
 
 // =======================================================================
 
+//3 sentences section
 void part_3(BOOLEAN score){
 	int PART_MAX = 2;
 	BOOLEAN randomize = FALSE;
@@ -74,7 +76,6 @@ void part_3(BOOLEAN score){
 		randomize = TRUE;
 	}
 
-	//3 sentences section
 	string_press("because this course is the best");
 	char_press(VK_TAB);
 	string_press("the course is perfect");
@@ -82,12 +83,12 @@ void part_3(BOOLEAN score){
 	string_press("good *thumbs*");
 	char_press(VK_TAB);
 
+	//the lil yes or no question
 	//initializes navigation
 	char_press(VK_RIGHT);
-	//the lil yes or no question
 	//randomize feature
 	if(randomize == TRUE){
-		score = (rand()%PART_MAX) + 1;
+		score = (rand()%PART_MAX);
 	}
 	if(score == TRUE){
 		char_press(VK_LEFT);
@@ -106,12 +107,9 @@ void part_3(BOOLEAN score){
 int main() {
 	separator("START");
 	
-	//switches to the browser 
-	//then initializes to a button
-	//then initialized the random
-	alt_tab();
-	char_press(VK_TAB); 
-	srand(time(0)); 
+	alt_tab();				//switches to the browser 
+	char_press(VK_TAB); 	//then initializes to a button
+	srand(time(0)); 		//then initialized the random
 
 	part_1(4);
 	part_2(10);

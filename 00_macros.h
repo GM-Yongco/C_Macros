@@ -11,10 +11,10 @@
 #include <string.h>
 #include <ctype.h>
 
-typedef enum{FALSE, TRUE}BOOLEAN;
-
 typedef unsigned char BYTE;
 #define DELAY_MS 100
+
+//note: Windows.h already has its own BOOLEAN with FALSE, TRUE
 
 // =======================================================================
 // MISC FUNCTIONS
