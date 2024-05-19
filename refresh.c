@@ -1,52 +1,24 @@
 // =======================================================================
-// Description     : Code that will impress u ;)
 // Author          : G.M. Yongco #BeSomeoneWhoCanStandByShinomiya
 // Date            : ur my date uwu
+// Description     : to refresh the first n tabs of your browser
 // =======================================================================
 
-#include <Windows.h>
 #include <stdio.h>
-
-typedef unsigned char BYTE;
+#include "00_macros.h"
 
 // =======================================================================
 // FUNCTIONS
 // =======================================================================
 
-void alt_tab(){
-	Sleep(100);
-	keybd_event(VK_MENU, 0, 0, 0);
-	keybd_event(VK_TAB, 0, 0, 0);
-	keybd_event(VK_TAB, 0, KEYEVENTF_KEYUP, 0);
-	keybd_event(VK_MENU, 0, KEYEVENTF_KEYUP, 0);
-
-	printf("alt tabbed\n");
-}
-
-void ctrl_char(BYTE virtualKeyCode){
-	Sleep(100);
-	keybd_event(VK_CONTROL, 0, 0, 0);
-	keybd_event(virtualKeyCode, 0, 0, 0);
-	keybd_event(virtualKeyCode, 0, KEYEVENTF_KEYUP, 0);
-	keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, 0);
-	
-	printf("ctrl +\tkey pressed \n", virtualKeyCode);
-}
-
-void char_press(BYTE virtualKeyCode){
-	Sleep(100);
-	keybd_event(virtualKeyCode, 0, 0, 0);
-	keybd_event(virtualKeyCode, 0, KEYEVENTF_KEYUP, 0);
-
-	printf("ENTER\tkey pressed\n");
-}
-
-void custom_loop(){
+void custom_loop(int n_of_tabs){
 	int i;
 	for(i = 1; i<7; i++){
-		ctrl_char(0x30 + i);	//ctrl + n for specific tab
+		ctrl_char(0x30 + i);	//ctrl + n for specific tab; n is an int
 		ctrl_char(0x52);		//ctrl + R
-		char_press(VK_RETURN);	//enter key for confirm resubmission if ever
+		press_char(VK_RETURN);	
+		//enter key for confirm resubmission if ever
+		//mostly for sites that need submissions; usually ran into this cuz was made for ISMIS
 	}
 }
 
@@ -56,7 +28,7 @@ void custom_loop(){
 
 int main() {
 	alt_tab();
-	custom_loop();
+	custom_loop(8);
 
 	return 0;
 }
