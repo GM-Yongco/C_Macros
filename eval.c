@@ -12,9 +12,27 @@
 #define RANDOM -1
 
 // =======================================================================
-// FUNCTIONS
+// MISC FUNCTIONS
 // =======================================================================
 
+void radio_button_n(int n){
+	Sleep(DELAY_MS);
+	//goes left and right to initialize the radio button selection
+	keybd_event(VK_RIGHT, 0, 0, 0);
+	keybd_event(VK_RIGHT, 0, KEYEVENTF_KEYUP, 0);
+	keybd_event(VK_LEFT, 0, 0, 0);
+	keybd_event(VK_LEFT, 0, KEYEVENTF_KEYUP, 0);
+	//goes to the appropriate button
+	int i;
+	for(i = 0; i<n;i++){
+		keybd_event(VK_RIGHT, 0, 0, 0);
+		keybd_event(VK_RIGHT, 0, KEYEVENTF_KEYUP, 0);
+	}
+}
+
+// =======================================================================
+// MAIN FUNCTIONS
+// =======================================================================
 
 void part_1(int score){
 	int i, j, PART_MAX = 4;
@@ -28,15 +46,9 @@ void part_1(int score){
 		if(randomize == TRUE){
 			score = (rand()%PART_MAX) + 1;
 		}
-		//initializes navigation
-		char_press(VK_RIGHT);
-		char_press(VK_LEFT);
-		//picks the score
-		for(i = 0; 
-			i < (score - 1) && i<PART_MAX; 
-			i++){
-			char_press(VK_RIGHT);
-		}
+		//selects the score
+		radio_button_n(score - 1);
+		//enters the score and proceeds
 		char_press(VK_RETURN);
 	}
 }
@@ -55,14 +67,9 @@ void part_2(int score){
 		score = (rand()%PART_MAX) + 1;
 	}
 
-	//initializes navigation
-	char_press(VK_RIGHT);
-	char_press(VK_LEFT);
-	for(i = 0; 
-		i < (score - 1) && i < PART_MAX; 
-		i++){
-		char_press(VK_RIGHT);
-	}
+	//selects the score
+	radio_button_n(score - 1);
+	//enters the score and proceeds
 	char_press(VK_RETURN);
 }
 
@@ -76,6 +83,7 @@ void part_3(BOOLEAN score){
 		randomize = TRUE;
 	}
 
+	//first 3 sentences sentences section
 	string_press("because this course is the best");
 	char_press(VK_TAB);
 	string_press("the course is perfect");
