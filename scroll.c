@@ -11,7 +11,7 @@ void custom_loop(){
 	int i;
 	for(i = 1; i<10000; i++){
 		Sleep(1000);
-		char_press(VK_DOWN);	//enter key for confirm resubmission if ever
+		press_char(VK_DOWN);	//enter key for confirm resubmission if ever
 	}
 }
 
