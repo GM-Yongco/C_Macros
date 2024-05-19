@@ -72,13 +72,13 @@ void shift_char(BYTE virtualKeyCode){
 	printf("\nctrl +\tkey pressed", virtualKeyCode);
 }
 
-void char_press(BYTE virtualKeyCode){
+void press_char(BYTE virtualKeyCode){
 	Sleep(DELAY_MS);
 	keybd_event(virtualKeyCode, 0, 0, 0);
 	keybd_event(virtualKeyCode, 0, KEYEVENTF_KEYUP, 0);
 }
 
-void string_press(char *str) {
+void press_string(char *str) {
 	Sleep(DELAY_MS);
 	int i;
 	for(i = 0; i < strlen(str); i++){

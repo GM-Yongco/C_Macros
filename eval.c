@@ -49,7 +49,7 @@ void part_1(int score){
 		//selects the score
 		radio_button_n(score - 1);
 		//enters the score and proceeds
-		char_press(VK_RETURN);
+		press_char(VK_RETURN);
 	}
 }
 
@@ -70,7 +70,7 @@ void part_2(int score){
 	//selects the score
 	radio_button_n(score - 1);
 	//enters the score and proceeds
-	char_press(VK_RETURN);
+	press_char(VK_RETURN);
 }
 
 // =======================================================================
@@ -84,28 +84,28 @@ void part_3(BOOLEAN score){
 	}
 
 	//first 3 sentences sentences section
-	string_press("because this course is the best");
-	char_press(VK_TAB);
-	string_press("the course is perfect");
-	char_press(VK_TAB);
-	string_press("good *thumbs*");
-	char_press(VK_TAB);
+	press_string("because this course is the best");
+	press_char(VK_TAB);
+	press_string("the course is perfect");
+	press_char(VK_TAB);
+	press_string("good *thumbs*");
+	press_char(VK_TAB);
 
 	//the lil yes or no question
 	//initializes navigation
-	char_press(VK_RIGHT);
+	press_char(VK_RIGHT);
 	//randomize feature
 	if(randomize == TRUE){
 		score = (rand()%PART_MAX);
 	}
 	if(score == TRUE){
-		char_press(VK_LEFT);
+		press_char(VK_LEFT);
 	}
-	char_press(VK_TAB);
+	press_char(VK_TAB);
 
 	//last sentences section
-	string_press("yes");
-	char_press(VK_RETURN);
+	press_string("yes");
+	press_char(VK_RETURN);
 }
 
 // =======================================================================
@@ -116,7 +116,7 @@ int main() {
 	separator("START");
 	
 	alt_tab();				//switches to the browser 
-	char_press(VK_TAB); 	//then initializes to a button
+	press_char(VK_TAB); 	//then initializes to a button
 	srand(time(0)); 		//then initialized the random
 
 	part_1(4);
