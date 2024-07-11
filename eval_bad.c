@@ -1,7 +1,7 @@
 // =======================================================================
-// Description     : Code that will impress u ;)
 // Author          : G.M. Yongco #BeSomeoneWhoCanStandByShinomiya
 // Date            : ur my date uwu
+// Description     : Bad eval for sir cobar or other teachers I dont like
 // =======================================================================
 
 #include <stdio.h>

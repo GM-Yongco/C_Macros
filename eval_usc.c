@@ -1,7 +1,7 @@
 // =======================================================================
-// Description     : to automate the USC ismis evaluation
 // Author          : G.M. Yongco #BeSomeoneWhoCanStandByShinomiya
 // Date            : ur my date uwu
+// Description     : to automate the USC ismis evaluation
 // =======================================================================
 
 #include <stdio.h>
@@ -117,7 +117,7 @@ int main() {
 	
 	alt_tab();				//switches to the browser 
 	press_char(VK_TAB); 	//then initializes to a button
-	srand(time(0)); 		//then initialized the random
+	srand(time(0)); 		//then initialized the random feature with a seed
 
 	part_1(4);
 	part_2(10);
