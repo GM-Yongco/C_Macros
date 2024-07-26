@@ -34,6 +34,9 @@ void burger_delete(){
 	keybd_event(VK_RETURN, 0, KEYEVENTF_KEYUP, 0);
 
 	//confirm delete
+	
+	// wait for the popup
+	Sleep(5000);	
 	//goes to the appropriate button
 	keybd_event(VK_TAB, 0, 0, 0);
 	keybd_event(VK_TAB, 0, KEYEVENTF_KEYUP, 0);
@@ -57,18 +60,24 @@ int main() {
 	alt_tab();				//switches to the browser 
 	ctrl_char(0x52);		//refreshes the page (ctrl + r)
 
-	Sleep(20000);			//wait for the refresh
+	Sleep(5000);			//wait for the refresh
 	separator("SLEEP DONE");
 
 	//initial burger
-	int i;
-	for(i = 0; i<11; i++){
+	int i, j;
+	for(i = 0; i<4; i++){
 		press_char(VK_TAB);
 	}
-	press_char(VK_RETURN);
-	separator("BURGER SELCTED");
+	for(j = 0; j<10; j++){
+		for(i = 0; i<7; i++){
+			press_char(VK_TAB);
+		}
+		press_char(VK_RETURN);
+		separator("BURGER SELCTED");
 
-	burger_delete();
+		burger_delete();	
+		Sleep(5000);	
+	}
 
 
 
