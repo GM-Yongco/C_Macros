@@ -14,8 +14,8 @@ import time
 # ========================================================================
 
 def command_with_logging(cmd_command:str = "cls") -> None:
-	print("waiting a second...")
-	time.sleep(1)
+	print("waiting a quarter-second...")
+	time.sleep(0.25)
 	print(f"{"command":15}: {cmd_command}\n{"exit status":15}: {os.system(cmd_command)}")
 
 def restart_file() -> None:
