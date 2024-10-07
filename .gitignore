@@ -1,1 +1,5 @@
+__pycache__
 *.exe
+
+temp.py
+restart_for_c_reference.txt
